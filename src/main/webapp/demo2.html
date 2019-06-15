@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>v-on:click</title>
+		<script src="js/vuejs-2.5.16.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			{{message}}  
+			<button v-on:click="fun1('good')">vue的onclick</button>
+		</div>
+	</body>
+	<script>
+		//view model
+		new Vue({
+			el:"#app",  //接管id为app的区域
+			data:{		//数据
+			    message:"Hello Vue"
+			},
+			methods:{    //方法
+                fun1:function (msg) {
+					this.message=msg;
+                }
+			}
+		})
+
+	</script>
+</html> 

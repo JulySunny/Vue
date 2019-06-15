@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>快速入门</title>
+		<script src="js/vuejs-2.5.16.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<!--Vue的插值表达式,把data中定义的数据显示到此处-->
+			{{message}}
+
+			<!--三元運算符 / 三目運算符-->
+			{{false ? "OK":"No"}}
+
+			<!--数学运算-->
+			{{number*3.14}}
+
+			<!--
+			插值表达式不支持变量的声明
+			例如以下
+			{{var a =1}}
+			{{if (a= 10){}}
+			-->
+		</div>
+	</body>
+	<script>
+		//创建Vue对象
+
+		new Vue({ //new Vue里面是Json格式的数据,所以是{}
+			el:"#app", //由vue接管id为app的区域
+			data:{	   //el和data是固定的不能改,必须叫这个名字
+			    message:"Hello Vue! " ,//注意,此处不要加分号,如果有多个数据,用逗号分割
+				number: 100
+			}
+		}
+		)
+	</script>
+</html>
