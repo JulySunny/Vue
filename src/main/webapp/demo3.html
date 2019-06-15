@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:v-on="http://www.w3.org/1999/xhtml">
 
 	<head>
 		<meta charset="utf-8" />
@@ -20,8 +20,12 @@
 		new Vue({
 			el:"#app",
 			methods:{
+			    /*$event
+			    * 它是vue中的事件对象 和我们传统js的event对象是有一样的
+			    *
+			    * */
 			    fun:function(event){
-                    alert("您输入的键盘数据不符合标准,无法录入");
+                    //alert("您输入的键盘数据不符合标准,无法录入");
 			        event.preventDefault();
 			 }
 			}
@@ -32,7 +36,7 @@
 			//event 对象和我们的document对象以及window对象可以直接使用,不用定义
 			var keyCode =event.keyCode;
 			if (keyCode<48 || keyCode>57){
-			    alert("您输入的键盘数据不符合标准,无法录入");
+			    // alert("您输入的键盘数据不符合标准,无法录入");
 				event.preventDefault();
 			}
         }

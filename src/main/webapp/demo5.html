@@ -10,13 +10,24 @@
 
 	<body>
 		<div id="app">
-			<!-- <form action="http://www.itcast.cn" onsubmit="return checkform()">
+			 <form action="https://www.baidu.com" onsubmit="return checkform()">
 				<input type="submit" value="Go"> 
-			</form> -->
+			</form>
+			<hr>
+			<!--阻止事件执行
+				相当于在传统js中将
+				方法preventDefault()
+				提取成属性
+				prevent
+			-->
 			<form  v-on:submit.prevent action="http://www.itcast.cn" >
 				<input type="submit" value="Go"> 
 			</form>
-			
+			<hr>
+			<!--阻止事件传播
+				相当于在传统js中将方法stopPropagation()提取成属性
+				stop
+			-->
 			<div v-on:click="fun">
 				<a v-on:click.stop href="http://www.itcast.cn">itcast</a>
 			</div>
@@ -32,11 +43,13 @@
 				}
 			}
 		});
-		
-		/* function checkform(){
-			return false;
-		} */
-		
+
+		//传统Js方式
+		 function checkform(){
+		     //表单验证必须有一个明确的boolean类型的返回值
+			 //在应用该验证方法时,必须加上return 关键字
+			return true;
+		}
 		
 		
 	</script>
